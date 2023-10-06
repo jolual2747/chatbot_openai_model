@@ -1,5 +1,6 @@
 # chatbot_openai_model
-Fine tuned chatbot with OpenAI models
+
+## Fine tuned Telegram chatbot with OpenAI models
 
 This repository contains the code and necessary resources for fine-tuning OpenAI models and creating a Telegram chatbot capable of recommending courses from the Platzi educational platform.
 

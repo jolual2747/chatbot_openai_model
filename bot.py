@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 class TelegramChatBot:
     """Telegram chatbot that answers questions related to Platzi courses and also can recommend them based
     on the provided description or question"""
-
     def __init__(self, env_file):
         load_dotenv(dotenv_path='./secrets/keys.env')
         self.telegram_token = os.getenv('TELEGRAM_TOKEN')
@@ -17,7 +16,6 @@ class TelegramChatBot:
 
     def get_updates(self, offset=None):
         """Retrieve the new messages from the Telegram chat"""
-
         url = f"https://api.telegram.org/bot{self.telegram_token}/getUpdates"
         params = {"timeout": 100, "offset": offset}
         response = requests.get(url, params=params)
@@ -25,7 +23,6 @@ class TelegramChatBot:
 
     def send_message(self, chat_id, text):
         """Send a message to the chat, answering on behalf of chatbot"""
-
         url = f"https://api.telegram.org/bot{self.telegram_token}/sendMessage"
         params = {"chat_id":chat_id, "text":text}
         response = requests.post(url=url, params=params)
